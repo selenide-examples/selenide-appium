@@ -1,0 +1,34 @@
+apply plugin: 'java'
+
+defaultTasks 'clean', 'test'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  testCompile 'junit:junit:4.12'
+  testCompile 'io.appium:java-client:2.2.0'
+  testCompile 'org.hamcrest:hamcrest-all:1.3'
+  testCompile 'com.codeborne:selenide:3.9.3'
+}
+
+task libs(type: Sync) {
+  from configurations.testCompile
+  into "$buildDir/lib"
+}
+
+testClasses.dependsOn libs
+
+[compileJava, compileTestJava]*.options.collect {options -> options.encoding = 'UTF-8'}
+[compileJava, compileTestJava]*.options.collect {options -> options.debug = true}
+[compileJava, compileTestJava]*.sourceCompatibility = 1.7
+[compileJava, compileTestJava]*.targetCompatibility = 1.7
+
+test {
+  systemProperties = [
+    'file.encoding': 'UTF-8',
+    'BUILD_URL': System.getenv()['BUILD_URL']
+  ]
+  testLogging.showStandardStreams = true
+}
