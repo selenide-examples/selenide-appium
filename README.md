@@ -7,9 +7,6 @@ How to test mobile application with Selenide and Appium
 
 ### How to run the example
 
-> emulator -avd default
-> appium
-
 * (optionally) Run device manager and created "default" device:
   > android avd
 
