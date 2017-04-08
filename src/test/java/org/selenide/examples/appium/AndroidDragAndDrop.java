@@ -64,12 +64,12 @@ public class AndroidDragAndDrop {
         $(By.xpath(".//*[@text='Drag and Drop']")).click();
         
         new TouchAction(driver)
-                .press($(By.id("io.appium.android.apis:id/drag_dot_1")).toWebElement())
+                .press($(By.id("io.appium.android.apis:id/drag_dot_1")))
                 .waitAction(1000)
                 .perform();
 
         new TouchAction(driver)
-                .moveTo($(By.id("io.appium.android.apis:id/drag_dot_2")).toWebElement())
+                .moveTo($(By.id("io.appium.android.apis:id/drag_dot_2")))
                 .release()
                 .waitAction(1000)
                 .perform();
