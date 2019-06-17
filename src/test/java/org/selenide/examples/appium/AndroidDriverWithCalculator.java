@@ -12,7 +12,7 @@ import java.net.URL;
 import static io.appium.java_client.remote.AndroidMobileCapabilityType.APP_ACTIVITY;
 import static io.appium.java_client.remote.AndroidMobileCapabilityType.APP_PACKAGE;
 
-public class AndroidDriverProvider implements WebDriverProvider {
+public class AndroidDriverWithCalculator implements WebDriverProvider {
     @Override
     public WebDriver createDriver(DesiredCapabilities capabilities) {
         capabilities.setCapability(MobileCapabilityType.VERSION, "4.4.2");

@@ -16,17 +16,15 @@ public class CalculatorTest {
 
     @Before
     public void setUp() {
-        Configuration.browser = AndroidDriverProvider.class.getName();
+        Configuration.browser = AndroidDriverWithCalculator.class.getName();
     }
 
     @Test
-    public void testCalculator(){
-
-        $(By.name("2")).click();
-        $(By.name("+")).click();
-        $(By.name("4")).click();
-        $(By.name("=")).click();
-
-        $(By.className("android.widget.EditText")).shouldHave(text("6"));
+    public void calculator(){
+        $(By.id("digit_2")).click();
+        $(By.id("op_add")).click();
+        $(By.id("digit_4")).click();
+        $(By.id("eq")).click();
+        $(By.id("result")).shouldHave(text("6"));
     }
 }
