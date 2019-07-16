@@ -8,8 +8,8 @@ repositories {
 
 dependencies {
   testCompile 'junit:junit:4.12'
-  testCompile 'io.appium:java-client:7.0.0'
-  testCompile 'com.codeborne:selenide:5.2.3'
+  testCompile 'io.appium:java-client:7.1.0'
+  testCompile 'com.codeborne:selenide:5.2.4'
 }
 
 task libs(type: Sync) {
