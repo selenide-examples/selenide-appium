@@ -16,7 +16,7 @@ public abstract class AbstractApiDemosTest {
     Configuration.startMaximized = false;
     Configuration.browserSize = null;
     Configuration.browser = AndroidDriverWithDemos.class.getName();
-    open("/");
+    open();
   }
 
   @SuppressWarnings("unchecked")

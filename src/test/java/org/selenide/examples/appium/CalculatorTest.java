@@ -22,7 +22,7 @@ public class CalculatorTest {
     Configuration.startMaximized = false;
     Configuration.browserSize = null;
     Configuration.browser = AndroidDriverWithCalculator.class.getName();
-    open("/");
+    open();
   }
 
   @Test
