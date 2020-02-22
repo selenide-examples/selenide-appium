@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.close;
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 
 /**
@@ -18,7 +18,7 @@ public class CalculatorTest {
 
   @Before
   public void setUp() {
-    close();
+    closeWebDriver();
     Configuration.startMaximized = false;
     Configuration.browserSize = null;
     Configuration.browser = AndroidDriverWithCalculator.class.getName();
