@@ -9,7 +9,7 @@ repositories {
 dependencies {
   testCompile 'junit:junit:4.13'
   testCompile 'io.appium:java-client:7.3.0'
-  testCompile 'com.codeborne:selenide:5.11.0'
+  testCompile 'com.codeborne:selenide:5.11.1'
   testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.30'
 }
 
