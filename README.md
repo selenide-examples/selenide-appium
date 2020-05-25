@@ -14,7 +14,7 @@ How to test mobile application with Selenide and Appium
    > appium
 
 * And finally, run the test:
-   > gradle test
+   > ./gradlew test
 
 Thanks to [Maryna Kolesnik](https://github.com/mkpythonanywhereblog) for CalculatorTest example!
 Her original sample can be found [here](https://gist.github.com/mkpythonanywhereblog/d1fb3dca2e66146f519f) 
