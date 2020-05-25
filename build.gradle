@@ -7,14 +7,15 @@ repositories {
 }
 
 dependencies {
-  testCompile 'junit:junit:4.13'
-  testCompile 'io.appium:java-client:7.3.0'
-  testCompile 'com.codeborne:selenide:5.11.1'
-  testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.30'
+  testImplementation 'junit:junit:4.13'
+  testImplementation('io.appium:java-client:7.3.0')
+  testImplementation 'com.codeborne:selenide:5.12.1'
+  testRuntime 'org.slf4j:slf4j-simple:1.7.30'
 }
 
 task libs(type: Sync) {
-  from configurations.testCompile
+  from configurations.compileClasspath
+  from configurations.testRuntimeClasspath
   into "$buildDir/lib"
 }
 
