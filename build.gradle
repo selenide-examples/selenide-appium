@@ -9,7 +9,7 @@ repositories {
 dependencies {
   testImplementation 'junit:junit:4.13'
   testImplementation('io.appium:java-client:7.3.0')
-  testImplementation 'com.codeborne:selenide:5.12.1'
+  testImplementation 'com.codeborne:selenide:5.13.0'
   testRuntime 'org.slf4j:slf4j-simple:1.7.30'
 }
 
