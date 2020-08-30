@@ -8,7 +8,7 @@ How to test mobile application with Selenide and Appium
 ### How to run the example
 
 * Run the emulator:
-  > open Android Stuiod -> "Android Virtual Device Manager" -> Run
+  > open Android Studio -> "Android Virtual Device Manager" -> Run
 
 * Run appium server:
    > appium
