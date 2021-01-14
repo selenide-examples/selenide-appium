@@ -4,12 +4,16 @@ defaultTasks 'clean', 'test'
 
 repositories {
   mavenCentral()
+  maven {
+    url "https://oss.sonatype.org/content/repositories/snapshots"
+    mavenContent { snapshotsOnly() }
+  }
 }
 
 dependencies {
   testImplementation 'junit:junit:4.13.1'
   testImplementation('io.appium:java-client:7.4.1')
-  testImplementation 'com.codeborne:selenide:5.17.3'
+  testImplementation 'com.codeborne:selenide:5.17.4'
   testRuntime 'org.slf4j:slf4j-simple:1.7.30'
 }
 
