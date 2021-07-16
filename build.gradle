@@ -12,8 +12,8 @@ repositories {
 
 dependencies {
   testImplementation 'junit:junit:4.13.2'
-  testImplementation 'com.codeborne:selenide-appium:1.6.6'
-  testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.30'
+  testImplementation 'com.codeborne:selenide-appium:1.6.7'
+  testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.31'
 }
 
 task libs(type: Sync) {
