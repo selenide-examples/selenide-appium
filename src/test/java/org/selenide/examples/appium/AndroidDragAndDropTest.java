@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.appium.java_client.android.AndroidTouchAction;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.ElementOption;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
 import java.time.Duration;
@@ -20,7 +20,7 @@ import static com.codeborne.selenide.Selenide.$;
  */
 public class AndroidDragAndDropTest extends AbstractApiDemosTest {
   @Test
-  public void dragAndDrop() {
+  void dragAndDrop() {
     $(By.xpath(".//*[@text='Views']")).click();
     $(By.xpath(".//*[@text='Drag and Drop']")).click();
 

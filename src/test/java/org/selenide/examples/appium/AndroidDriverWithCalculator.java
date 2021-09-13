@@ -6,6 +6,8 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import javax.annotation.CheckReturnValue;
+import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -14,6 +16,8 @@ import static io.appium.java_client.remote.AndroidMobileCapabilityType.APP_PACKA
 
 public class AndroidDriverWithCalculator implements WebDriverProvider {
     @Override
+    @CheckReturnValue
+    @Nonnull
     public WebDriver createDriver(DesiredCapabilities capabilities) {
         capabilities.setCapability(MobileCapabilityType.VERSION, "4.4.2");
         capabilities.setCapability("automationName", "Appium");
@@ -25,7 +29,7 @@ public class AndroidDriverWithCalculator implements WebDriverProvider {
         //It will launch the Calculator App in Android Device using the configurations specified in Desired Capabilities
 
         try {
-            return new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+            return new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

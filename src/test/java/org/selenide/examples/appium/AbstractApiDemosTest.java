@@ -3,15 +3,15 @@ package org.selenide.examples.appium;
 import com.codeborne.selenide.Configuration;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public abstract class AbstractApiDemosTest {
-  @Before
-  public void setUp() {
+  @BeforeEach
+  void setUp() {
     closeWebDriver();
     Configuration.startMaximized = false;
     Configuration.browserSize = null;

@@ -11,8 +11,8 @@ repositories {
 }
 
 dependencies {
-  testImplementation 'junit:junit:4.13.2'
   testImplementation 'com.codeborne:selenide-appium:1.6.9'
+  testImplementation('org.junit.jupiter:junit-jupiter:5.8.0')
   testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.32'
 }
 

@@ -1,8 +1,8 @@
 package org.selenide.examples.appium;
 
 import com.codeborne.selenide.Configuration;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
@@ -16,8 +16,8 @@ import static com.codeborne.selenide.Selenide.open;
  */
 public class CalculatorTest {
 
-  @Before
-  public void setUp() {
+  @BeforeEach
+  void setUp() {
     closeWebDriver();
     Configuration.startMaximized = false;
     Configuration.browserSize = null;
@@ -26,7 +26,7 @@ public class CalculatorTest {
   }
 
   @Test
-  public void calculator() {
+  void calculator() {
     $(By.id("digit_2")).click();
     $(By.id("op_add")).click();
     $(By.id("digit_4")).click();
