@@ -19,7 +19,6 @@ public class CalculatorTest {
   @BeforeEach
   void setUp() {
     closeWebDriver();
-    Configuration.startMaximized = false;
     Configuration.browserSize = null;
     Configuration.browser = AndroidDriverWithCalculator.class.getName();
     open();

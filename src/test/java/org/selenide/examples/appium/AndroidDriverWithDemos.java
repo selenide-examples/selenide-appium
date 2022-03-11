@@ -2,12 +2,14 @@ package org.selenide.examples.appium;
 
 import com.codeborne.selenide.WebDriverProvider;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.android.options.UiAutomator2Options;
+import io.appium.java_client.remote.AutomationName;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,23 +17,29 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
+import static org.openqa.selenium.remote.CapabilityType.APPLICATION_NAME;
 
+@ParametersAreNonnullByDefault
 public class AndroidDriverWithDemos implements WebDriverProvider {
     @Override
     @CheckReturnValue
     @Nonnull
-    public WebDriver createDriver(DesiredCapabilities capabilities) {
+    public WebDriver createDriver(Capabilities capabilities) {
         File app = downloadApk();
-        capabilities.setCapability(MobileCapabilityType.VERSION, "4.4.2");
-        capabilities.setCapability("automationName", "Appium");
-        capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("deviceName", "Android Emulator");
-        capabilities.setCapability("app", app.getAbsolutePath());
-        capabilities.setCapability("appPackage", "io.appium.android.apis");
-        capabilities.setCapability("appActivity", ".ApiDemos");
+
+        UiAutomator2Options options = new UiAutomator2Options();
+        options.merge(capabilities);
+        options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
+        options.setPlatformName("Android");
+        options.setDeviceName("Android Emulator");
+        options.setPlatformVersion("9.0");
+        options.setCapability(APPLICATION_NAME, "Appium");
+        options.setApp(app.getAbsolutePath());
+        options.setAppPackage("io.appium.android.apis");
+        options.setAppActivity(".ApiDemos");
 
         try {
-            return new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+            return new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), options);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

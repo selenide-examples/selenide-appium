@@ -1,13 +1,8 @@
 package org.selenide.examples.appium;
 
 import com.codeborne.selenide.SelenideElement;
-import io.appium.java_client.android.AndroidTouchAction;
-import io.appium.java_client.touch.WaitOptions;
-import io.appium.java_client.touch.offset.ElementOption;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-
-import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.text;
@@ -30,12 +25,7 @@ public class AndroidDragAndDropTest extends AbstractApiDemosTest {
 
     $(dragText).shouldHave(exactText(""));
 
-    new AndroidTouchAction(driver())
-        .longPress(ElementOption.element(from))
-        .waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000)))
-        .moveTo(ElementOption.element(to))
-        .release()
-        .perform();
+    from.dragAndDropTo(to);
 
     $(dragText)
         .shouldBe(visible)
