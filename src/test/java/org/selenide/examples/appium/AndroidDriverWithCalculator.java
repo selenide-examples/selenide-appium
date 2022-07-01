@@ -24,11 +24,7 @@ public class AndroidDriverWithCalculator implements WebDriverProvider {
     public WebDriver createDriver(Capabilities capabilities) {
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
-        options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setPlatformName("Android");
-        options.setDeviceName("Android Emulator");
-        options.setPlatformVersion("9.0");
-        options.setCapability(APPLICATION_NAME, "Appium");
+        options.setPlatformVersion("9.0"); // it seems calculator app is not available in later Android versions
         options.setAppPackage("com.android.calculator2");
         options.setAppActivity("com.android.calculator2.Calculator");
         options.setNewCommandTimeout(Duration.ofSeconds(11));

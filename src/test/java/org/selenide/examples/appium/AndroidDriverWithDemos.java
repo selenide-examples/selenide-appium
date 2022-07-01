@@ -3,7 +3,6 @@ package org.selenide.examples.appium;
 import com.codeborne.selenide.WebDriverProvider;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
-import io.appium.java_client.remote.AutomationName;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 
@@ -17,7 +16,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
-import static org.openqa.selenium.remote.CapabilityType.APPLICATION_NAME;
 
 @ParametersAreNonnullByDefault
 public class AndroidDriverWithDemos implements WebDriverProvider {
@@ -29,11 +27,6 @@ public class AndroidDriverWithDemos implements WebDriverProvider {
 
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
-        options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
-        options.setPlatformName("Android");
-        options.setDeviceName("Android Emulator");
-        options.setPlatformVersion("9.0");
-        options.setCapability(APPLICATION_NAME, "Appium");
         options.setApp(app.getAbsolutePath());
         options.setAppPackage("io.appium.android.apis");
         options.setAppActivity(".ApiDemos");
