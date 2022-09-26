@@ -12,10 +12,10 @@ repositories {
 }
 
 dependencies {
-  testImplementation 'com.codeborne:selenide-appium:2.1.2'
-  testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
+  testImplementation 'com.codeborne:selenide-appium:2.2.0'
+  testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
   testImplementation 'commons-io:commons-io:2.11.0'
-  testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.36'
+  testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.2'
 }
 
 task libs(type: Sync) {
