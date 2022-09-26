@@ -1,9 +1,11 @@
 package org.selenide.examples.appium;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -21,6 +23,9 @@ public class CalculatorTest {
     closeWebDriver();
     Configuration.browserSize = null;
     Configuration.browser = AndroidDriverWithCalculator.class.getName();
+    WebDriverRunner.addListener(new AbstractWebDriverEventListener() {
+    });
+
     open();
   }
 
