@@ -23,11 +23,18 @@ dependencies {
 [compileJava, compileTestJava]*.sourceCompatibility = 1.8
 [compileJava, compileTestJava]*.targetCompatibility = 1.8
 
-test {
+tasks.withType(Test).configureEach {
   useJUnitPlatform()
   systemProperties = [
-    'file.encoding': 'UTF-8',
-    'BUILD_URL': System.getenv()['BUILD_URL']
+    'file.encoding': 'UTF-8'
   ]
   testLogging.showStandardStreams = true
+}
+
+test {
+  include 'nope/**/*'
+}
+
+tasks.register("android", Test) {
+  include 'org/selenide/examples/appium/**/*'
 }
