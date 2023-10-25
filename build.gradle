@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-  testImplementation 'com.codeborne:selenide-appium:6.19.1'
+  testImplementation 'com.codeborne:selenide-appium:7.0.0'
   testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
   testImplementation 'commons-io:commons-io:2.14.0'
   testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.9'
@@ -20,8 +20,8 @@ dependencies {
 
 [compileJava, compileTestJava]*.options.collect {options -> options.encoding = 'UTF-8'}
 [compileJava, compileTestJava]*.options.collect {options -> options.debug = true}
-[compileJava, compileTestJava]*.sourceCompatibility = 1.8
-[compileJava, compileTestJava]*.targetCompatibility = 1.8
+[compileJava, compileTestJava]*.sourceCompatibility = 17
+[compileJava, compileTestJava]*.targetCompatibility = 17
 
 tasks.withType(Test).configureEach {
   useJUnitPlatform()
