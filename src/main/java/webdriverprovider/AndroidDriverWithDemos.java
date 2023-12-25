@@ -1,4 +1,4 @@
-package org.selenide.examples.appium;
+package webdriverprovider;
 
 import com.codeborne.selenide.WebDriverProvider;
 import io.appium.java_client.android.AndroidDriver;

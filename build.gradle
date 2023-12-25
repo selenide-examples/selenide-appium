@@ -12,9 +12,9 @@ repositories {
 }
 
 dependencies {
-  testImplementation 'com.codeborne:selenide-appium:7.0.4'
+  implementation 'com.codeborne:selenide-appium:7.0.4'
   testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
-  testImplementation 'commons-io:commons-io:2.15.1'
+  implementation 'commons-io:commons-io:2.15.1'
   testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.9'
 }
 
@@ -36,5 +36,5 @@ test {
 }
 
 tasks.register("android", Test) {
-  include 'org/selenide/examples/appium/**/*'
+  include 'org/selenide/examples/***/**/*'
 }
