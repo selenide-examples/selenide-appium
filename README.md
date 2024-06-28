@@ -10,8 +10,8 @@ How to test mobile application with Selenide and Appium
 * Run the emulator:
   > open Android Studio -> "Android Virtual Device Manager" -> Run
 
-* Run appium server:
-   > appium
+  Alternatively, you can start emulator from command line:
+  > emulator -avd Pixel_4_API_28_1
 
 * And finally, run the test:
    > ./gradlew test
