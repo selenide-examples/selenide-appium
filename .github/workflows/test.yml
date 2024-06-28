@@ -34,10 +34,6 @@ jobs:
 
   run-android-tests-job:
     runs-on: macOS-11
-    env:
-      APPIUM_TEST_SERVER_PORT: 4723
-      APPIUM_TEST_SERVER_HOST: 127.0.0.1
-      APPIUM_STARTUP_TIMEOUT_SEC: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -63,22 +59,7 @@ jobs:
           cd ~
           appium driver install uiautomator2
           appium-doctor
-          nohup appium \
-            --base-path /wd/hub \
-            --relaxed-security \
-            2>&1 > "$cwd/appium.log" &
           popd
-      - name: Wait for Appium server startup
-        run: |
-          seconds_started=$(date +%s)
-          while ! nc -z $APPIUM_TEST_SERVER_HOST $APPIUM_TEST_SERVER_PORT; do
-            sleep 0.1
-            seconds_elapsed=$(( $(date +%s) - seconds_started ))
-            if [[ $seconds_elapsed -gt $APPIUM_STARTUP_TIMEOUT_SEC ]]; then
-              echo "Appium server was unable to start within $APPIUM_STARTUP_TIMEOUT_SEC seconds timeout"
-              exit 1
-            fi
-          done
       - name: Run tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -93,7 +74,7 @@ jobs:
           name: test-report-android
           path: |
             build/reports/
-            appium.log
+            build/test-results/
 
 
   auto-merge-dependabot:
