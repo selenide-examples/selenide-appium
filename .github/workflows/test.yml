@@ -67,7 +67,7 @@ jobs:
           profile: pixel_3_xl
           disable-animations: true
           emulator-options: -no-snapshot -no-window -no-boot-anim -camera-back emulated -camera-front emulated -gpu swiftshader_indirect
-          script: ./gradlew android --info
+          script: ./gradlew android-tests
       - uses: actions/upload-artifact@v4
         if: failure()
         with:

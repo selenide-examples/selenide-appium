@@ -42,6 +42,6 @@ test {
   include 'nope/**/*'
 }
 
-tasks.register("android", Test) {
+tasks.register("android-tests", Test) {
   include 'org/selenide/examples/appium/**/*'
 }
