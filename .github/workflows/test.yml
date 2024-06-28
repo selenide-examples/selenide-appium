@@ -75,6 +75,7 @@ jobs:
           path: |
             build/reports/
             build/test-results/
+            hs_err_*.log
 
 
   auto-merge-dependabot:
