@@ -22,6 +22,6 @@ Her original sample can be found [here](https://gist.github.com/mkpythonanywhere
 NB! This project uses a simple approach for tests: it just calls Selenide standard `$` method to find elements in mobile app.
 I like it. It's just good enough.
 
-But if you prefer Android- and IOS- specific annotations like `@AndroidFindBy`, you can also use them. 
-Library [selenide-appium](https://github.com/selenide/selenide-appium) has Selenide+Appium specific page factory 
-for supporting those annotations. 
+But it's also possible to use Android- and IOS- specific annotations like `@AndroidFindBy`. 
+Library [selenide-appium](https://github.com/selenide/selenide/tree/main/modules/appium) has Selenide+Appium specific page factory 
+for supporting those annotations and many other features. 
