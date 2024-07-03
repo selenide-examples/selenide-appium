@@ -67,7 +67,7 @@ jobs:
           profile: pixel_3_xl
           disable-animations: true
           emulator-options: -no-snapshot -no-window -no-boot-anim -camera-back emulated -camera-front emulated -gpu swiftshader_indirect
-          script: ./gradlew android-tests
+          script: ./gradlew android-tests --no-daemon --console=plain -i
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
@@ -76,7 +76,7 @@ jobs:
             build/reports/
             build/test-results/
             hs_err_*.log
-
+            ~/.gradle/**/*.log
 
   auto-merge-dependabot:
     name: 🤖 Auto merge dependabot PR
