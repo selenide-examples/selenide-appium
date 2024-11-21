@@ -32,7 +32,7 @@ public class AndroidDriverWithDemos implements WebDriverProvider {
         options.setAppActivity(".ApiDemos");
 
         try {
-            return new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), options);
+            return new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
