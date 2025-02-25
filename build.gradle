@@ -22,7 +22,7 @@ dependencies {
   testImplementation "org.junit.platform:junit-platform-engine:$junitPlatformVersion"
   testImplementation "org.junit.platform:junit-platform-launcher:$junitPlatformVersion"
   testImplementation 'commons-io:commons-io:2.18.0'
-  testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.16'
+  testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.17'
 }
 
 [compileJava, compileTestJava]*.options.collect {options -> options.encoding = 'UTF-8'}
