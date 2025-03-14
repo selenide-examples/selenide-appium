@@ -45,12 +45,7 @@ public class MobileTestExtension implements BeforeAllCallback, AfterAllCallback,
     Configuration.browserSize = null;
     Configuration.pageLoadTimeout = -1;
 
-    WebDriverRunner.addListener(new WebDriverListener() {
-      @Override
-      public void beforeClick(WebElement element) {
-        WebDriverListener.super.beforeClick(element);
-      }
-    });
+    WebDriverRunner.addListener(new ClickListener());
 
     WebDriverRunner.addListener(new WebDriverListener() {
       @Override
