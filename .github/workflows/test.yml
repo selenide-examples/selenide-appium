@@ -33,7 +33,7 @@ jobs:
           path: build/reports/
 
   run-android-tests-job:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -45,27 +45,23 @@ jobs:
       - name: Setup NodeJS
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
       - name: Install Appium
         run: |
           npm install -g appium@next
           npm install -g appium-doctor
-      - name: Start Appium server
-        run: |
-          cwd=$(pwd)
-          pushd "$cwd"
-          cd ~
           appium driver install uiautomator2
-          appium-doctor
-          popd
+      - name: Check Appium installation
+        run: appium-doctor
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
       - name: Run tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 28
-          arch: arm64-v8a
-          profile: pixel_3_xl
-          disable-animations: true
-          emulator-options: -no-snapshot -no-window -no-boot-anim -camera-back emulated -camera-front emulated -gpu swiftshader_indirect
           script: ./gradlew android-tests --no-daemon --console=plain -i
       - uses: actions/upload-artifact@v4
         if: failure()
