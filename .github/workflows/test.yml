@@ -33,7 +33,7 @@ jobs:
           path: build/reports/
 
   run-android-tests-job:
-    runs-on: macOS-11
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
