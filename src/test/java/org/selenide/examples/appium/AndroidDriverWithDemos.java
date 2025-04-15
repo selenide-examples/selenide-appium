@@ -6,9 +6,6 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 
-import javax.annotation.CheckReturnValue;
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,11 +14,8 @@ import java.net.URL;
 
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
-@ParametersAreNonnullByDefault
 public class AndroidDriverWithDemos implements WebDriverProvider {
     @Override
-    @CheckReturnValue
-    @Nonnull
     public WebDriver createDriver(Capabilities capabilities) {
         File app = downloadApk();
 

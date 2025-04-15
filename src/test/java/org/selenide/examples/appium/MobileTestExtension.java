@@ -4,11 +4,11 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.extension.AfterAllCallback;
 import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverListener;
 
 import java.lang.reflect.Method;
@@ -18,6 +18,7 @@ import static io.appium.java_client.service.local.flags.GeneralServerFlag.RELAXE
 import static java.time.Duration.ofMinutes;
 
 public class MobileTestExtension implements BeforeAllCallback, AfterAllCallback, BeforeEachCallback {
+  @Nullable
   private static AppiumDriverLocalService service;
 
   @Override
