@@ -12,13 +12,12 @@ repositories {
 }
 
 ext {
-  junitVersion = '5.13.4'
   junitPlatformVersion = '1.13.4'
 }
 
 dependencies {
   testImplementation 'com.codeborne:selenide-appium:7.9.4'
-  testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
+  testImplementation "org.junit.jupiter:junit-jupiter:5.13.4"
   testImplementation "org.junit.platform:junit-platform-engine:$junitPlatformVersion"
   testImplementation "org.junit.platform:junit-platform-launcher:$junitPlatformVersion"
   testImplementation 'commons-io:commons-io:2.20.0'
