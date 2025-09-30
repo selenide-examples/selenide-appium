@@ -17,7 +17,7 @@ ext {
 
 dependencies {
   testImplementation 'com.codeborne:selenide-appium:7.10.1'
-  testImplementation "org.junit.jupiter:junit-jupiter:5.13.4"
+  testImplementation "org.junit.jupiter:junit-jupiter:6.0.0"
   testImplementation "org.junit.platform:junit-platform-engine:$junitPlatformVersion"
   testImplementation "org.junit.platform:junit-platform-launcher:$junitPlatformVersion"
   testImplementation 'commons-io:commons-io:2.20.0'
