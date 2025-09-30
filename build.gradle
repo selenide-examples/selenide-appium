@@ -12,14 +12,14 @@ repositories {
 }
 
 ext {
-  junitPlatformVersion = '6.0.0'
+  junitVersion = '6.0.0'
 }
 
 dependencies {
   testImplementation 'com.codeborne:selenide-appium:7.10.1'
-  testImplementation "org.junit.jupiter:junit-jupiter:6.0.0"
-  testImplementation "org.junit.platform:junit-platform-engine:$junitPlatformVersion"
-  testImplementation "org.junit.platform:junit-platform-launcher:$junitPlatformVersion"
+  testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
+  testImplementation "org.junit.platform:junit-platform-engine:$junitVersion"
+  testImplementation "org.junit.platform:junit-platform-launcher:$junitVersion"
   testImplementation 'commons-io:commons-io:2.20.0'
   testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.17'
 }
