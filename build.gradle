@@ -20,7 +20,7 @@ dependencies {
   testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
   testImplementation "org.junit.platform:junit-platform-engine:$junitVersion"
   testImplementation "org.junit.platform:junit-platform-launcher:$junitVersion"
-  testImplementation 'commons-io:commons-io:2.20.0'
+  testImplementation 'commons-io:commons-io:2.21.0'
   testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.17'
 }
 
