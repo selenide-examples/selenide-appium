@@ -1,3 +1,4 @@
 org.selenide.examples.appium.MobileTestExtension
+org.selenide.videorecorder.junit5.VideoRecorderExtension
 com.codeborne.selenide.junit5.TextReportExtension
 com.codeborne.selenide.junit5.ScreenShooterExtension
