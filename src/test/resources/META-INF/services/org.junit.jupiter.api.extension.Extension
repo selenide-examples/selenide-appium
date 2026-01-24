@@ -1,0 +1,3 @@
+org.selenide.examples.appium.MobileTestExtension
+com.codeborne.selenide.junit5.TextReportExtension
+com.codeborne.selenide.junit5.ScreenShooterExtension

@@ -3,7 +3,6 @@ package org.selenide.examples.appium;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
@@ -14,7 +13,6 @@ import static com.codeborne.selenide.Selenide.open;
  * Thanks to <a href="https://github.com/mkpythonanywhereblog">Maryna Kolesnik</a> for this example!
  * Her original sample can be found <a href="https://gist.github.com/mkpythonanywhereblog/d1fb3dca2e66146f519f">here</a>
  */
-@ExtendWith(MobileTestExtension.class)
 public class CalculatorTest {
 
   @BeforeEach
