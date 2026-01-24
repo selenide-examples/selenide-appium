@@ -17,6 +17,7 @@ ext {
 
 dependencies {
   testImplementation 'com.codeborne:selenide-appium:7.14.0'
+  testImplementation 'com.codeborne:selenide-video-recorder:7.14.0'
   testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
   testImplementation "org.junit.platform:junit-platform-engine:$junitVersion"
   testImplementation "org.junit.platform:junit-platform-launcher:$junitVersion"
@@ -38,9 +39,5 @@ tasks.withType(Test).configureEach {
 }
 
 test {
-  include 'nope/**/*'
-}
-
-tasks.register("android-tests", Test) {
   include 'org/selenide/examples/appium/**/*'
 }

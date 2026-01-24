@@ -14,7 +14,7 @@ How to test mobile application with Selenide and Appium
   > emulator -avd Pixel_4_API_28_1
 
 * And run the test:
-   > ./gradlew android-tests
+   > ./gradlew test
 
 Thanks to [Maryna Kolesnik](https://github.com/mkpythonanywhereblog) for CalculatorTest example!
 Her original sample can be found [here](https://gist.github.com/mkpythonanywhereblog/d1fb3dca2e66146f519f) 
