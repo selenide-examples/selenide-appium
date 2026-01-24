@@ -22,7 +22,7 @@ public class AndroidDragAndDropTest extends AbstractApiDemosTest {
 
     SelenideElement draggable = $(By.id("io.appium.android.apis:id/drag_dot_1")).shouldBe(visible);
     SelenideElement target = $(By.id("io.appium.android.apis:id/drag_dot_2")).shouldBe(visible);
-    By dragText = By.id("io.appium.android.apis:id/drag_text");
+    By dragText = By.id("io.appium.android.apis:id/drag_result_text");
 
     $(dragText).shouldHave(exactText(""));
 
@@ -30,6 +30,6 @@ public class AndroidDragAndDropTest extends AbstractApiDemosTest {
 
     $(dragText)
         .shouldBe(visible)
-        .shouldHave(text("Dot"), text("DraggableDot"));
+        .shouldHave(exactText("Dropped!"));
   }
 }
