@@ -30,7 +30,7 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: Run checks and unit tests
         run: ./gradlew testClasses --no-daemon --console=plain -i
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         if: failure()
         with:
           name: test-report-unit
